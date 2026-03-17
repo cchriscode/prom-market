@@ -1,0 +1,31 @@
+"use client";
+
+import Link from "next/link";
+import { PromptCard } from "@/entities/prompt";
+import { MOCK_FEATURED_PROMPTS } from "@/shared/lib/mocks";
+
+export function FeaturedSection() {
+  return (
+    <section>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold">Featured Prompts</h2>
+        <Link
+          href="/marketplace?sort=featured"
+          className="text-sm text-muted-foreground hover:text-foreground"
+        >
+          더 보기
+        </Link>
+      </div>
+
+      <div className="mt-4 flex gap-4 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden">
+        {MOCK_FEATURED_PROMPTS.map((prompt) => (
+          <PromptCard
+            key={prompt.id}
+            prompt={prompt}
+            className="min-w-[220px] shrink-0 snap-start"
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
