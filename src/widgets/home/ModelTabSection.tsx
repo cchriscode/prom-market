@@ -7,7 +7,7 @@ import { PromptCard } from "@/entities/prompt";
 import { AI_MODELS } from "@/shared/lib/constants";
 import { MOCK_PROMPTS } from "@/shared/lib/mocks";
 
-const TOP_MODELS = AI_MODELS.slice(0, 5);
+const TOP_MODELS = AI_MODELS.slice(0, 9);
 
 export function ModelTabSection() {
   const [selectedModel, setSelectedModel] = useState(TOP_MODELS[0].id);

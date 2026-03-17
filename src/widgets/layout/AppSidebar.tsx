@@ -12,11 +12,7 @@ import {
 } from "@/shared/ui/tooltip";
 import { Separator } from "@/shared/ui/separator";
 import { useLayout } from "./model/useLayout";
-import {
-  NAV_SECTIONS,
-  MODEL_SHORTCUTS,
-  BOTTOM_NAV,
-} from "./model/navigation";
+import { NAV_SECTIONS, BOTTOM_NAV } from "./model/navigation";
 
 export function AppSidebar() {
   const pathname = usePathname();
@@ -24,7 +20,7 @@ export function AppSidebar() {
 
   return (
     <aside
-      className="fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-border bg-sidebar"
+      className="fixed left-0 top-0 z-40 hidden h-screen flex-col border-r border-border bg-sidebar lg:flex"
       style={{
         width: isSidebarExpanded ? LAYOUT.SIDEBAR_EXPANDED : LAYOUT.SIDEBAR_COLLAPSED,
         transition: "width 250ms ease-out",
@@ -94,34 +90,6 @@ export function AppSidebar() {
             </ul>
           </div>
         ))}
-
-        {/* Model Shortcuts */}
-        {isSidebarExpanded && (
-          <div className="mb-4">
-            <p className="mb-1 px-2 text-xs font-medium text-muted-foreground">
-              내 카테고리
-            </p>
-            <ul className="space-y-0.5">
-              {MODEL_SHORTCUTS.map((model) => (
-                <li key={model.id}>
-                  <Link
-                    href={model.href}
-                    className="flex items-center gap-3 rounded-md px-2 py-2 text-sm text-sidebar-foreground hover:bg-accent hover:text-accent-foreground"
-                  >
-                    <span className="w-4 text-center text-sm">{model.emoji}</span>
-                    <span>{model.label}</span>
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <button className="flex items-center gap-3 rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground">
-                  <span className="w-4 text-center text-xs">+</span>
-                  <span>더 보기 (+24)</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-        )}
 
         <Separator className="my-2" />
 

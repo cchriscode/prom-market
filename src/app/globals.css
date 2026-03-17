@@ -80,9 +80,16 @@
 
   /* Prompt Status */
   --prompt-active: #22C55E;
+  --prompt-active-bg: #F0FDF4;
   --prompt-pending: #F59E0B;
+  --prompt-pending-bg: #FFFBEB;
   --prompt-rejected: #EF4444;
+  --prompt-rejected-bg: #FEF2F2;
   --prompt-inactive: #94A3B8;
+  --prompt-inactive-bg: #F8FAFC;
+
+  /* Rating */
+  --rating-bar: #FACC15;
 }
 
 @theme inline {
@@ -137,9 +144,15 @@
   --color-seller-bronze-bg: var(--seller-bronze-bg);
 
   --color-prompt-active: var(--prompt-active);
+  --color-prompt-active-bg: var(--prompt-active-bg);
   --color-prompt-pending: var(--prompt-pending);
+  --color-prompt-pending-bg: var(--prompt-pending-bg);
   --color-prompt-rejected: var(--prompt-rejected);
+  --color-prompt-rejected-bg: var(--prompt-rejected-bg);
   --color-prompt-inactive: var(--prompt-inactive);
+  --color-prompt-inactive-bg: var(--prompt-inactive-bg);
+
+  --color-rating-bar: var(--rating-bar);
 
   --font-sans: "Pretendard Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -149,4 +162,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   letter-spacing: -0.015em;
+}
+
+/* Mobile: override inline sidebar offsets */
+@media (max-width: 1023px) {
+  [data-layout-main] {
+    margin-left: 0 !important;
+  }
+  [data-topbar] {
+    left: 0 !important;
+  }
 }

@@ -2,6 +2,9 @@ import type { User } from "@/entities/user/model/types";
 
 export const MOCK_CURRENT_USER: User | null = null;
 
+/** Mock: pretend current user bought these prompts */
+export const MOCK_PURCHASED_IDS = ["p-01", "p-05", "p-09", "p-16", "p-22"] as const;
+
 export const MOCK_SELLERS: User[] = [
   {
     id: "user-s01",

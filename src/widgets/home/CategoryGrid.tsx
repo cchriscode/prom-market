@@ -16,7 +16,7 @@ export function CategoryGrid() {
       </div>
 
       <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9">
-        {MOCK_CATEGORIES.map((category) => (
+        {MOCK_CATEGORIES.slice(0, 15).map((category) => (
           <CategoryChip key={category.id} category={category} />
         ))}
       </div>

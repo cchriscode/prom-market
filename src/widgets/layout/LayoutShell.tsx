@@ -18,6 +18,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
       <AppSidebar />
       <TopBar />
       <div
+        data-layout-main
         className="min-h-screen"
         style={{
           marginLeft: sidebarWidth,
@@ -25,7 +26,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
           transition: "margin-left 250ms ease-out",
         }}
       >
-        <main className="px-6 py-6">{children}</main>
+        <main className="px-4 py-4 lg:px-6 lg:py-6">{children}</main>
         <Footer />
       </div>
     </TooltipProvider>

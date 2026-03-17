@@ -22,7 +22,7 @@ export const MOCK_HERO_BANNERS = [
     title: "Select 구독",
     subtitle: "월 ₩14,900으로 무제한 다운로드",
     ctaText: "구독하기",
-    ctaHref: "/subscription",
+    ctaHref: "/account",
     bgColor: "bg-gradient-to-r from-amber-500 to-orange-600",
   },
 ];
